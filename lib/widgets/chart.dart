@@ -27,17 +27,14 @@ class Chart extends StatelessWidget {
 double get totalSpending {
     return groupedTransactionValues.fold(0.0, (sum, item) => sum + item['amount']);
 }
-
-
-
   @override
   Widget build(BuildContext context) {
-
     print(groupedTransactionValues);
     return Card(
+      margin: EdgeInsets.all(15.0),
       elevation: 6,
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(20.0),
         child: Row(
           children: groupedTransactionValues.map((data) =>
           Flexible( fit: FlexFit.tight,
